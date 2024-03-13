@@ -1,10 +1,18 @@
 #!/usr/bin/python
 #-*- coding: utf-8 -*-
 
+import pygame
+
+from GameModel.Const import WIN_HEIGHT, WIN_WIDTH
+from GameModel.Menu import Menu
+
+
 class Game:
     def __init__(self):
-        self.window = None
+        pygame.init()
+        self.window = pygame.display.set_mode((WIN_WIDTH, WIN_HEIGHT))
 
-    def run(self, ):
-        pass
-
+    def run(self):
+        while True:
+            menu = Menu(self.window)
+            menu.run()
